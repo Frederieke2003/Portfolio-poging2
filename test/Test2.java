@@ -1,5 +1,5 @@
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class Test2 {
     @Test
@@ -19,6 +19,7 @@ public class Test2 {
 
         //Assert
         assertEquals(6, consument.rekenAf(), 0.01);
+        assertTrue(consument.winkelwagen.getProducten().size() == 0);
 
     }
 }

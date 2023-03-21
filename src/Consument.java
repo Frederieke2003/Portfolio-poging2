@@ -22,6 +22,7 @@ public class Consument {
         if (gebruikteKortingCode != null) {
             totaalPrijs -= gebruikteKortingCode.getKortingWaarde();
         }
+        winkelwagen.leegWinkelwagen();
         return totaalPrijs;
     }
 

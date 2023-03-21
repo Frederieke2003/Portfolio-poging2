@@ -136,7 +136,6 @@ public class Main {
 
                 case 5:
                     double totaalPrijs = consument.rekenAf();
-                    consument.winkelwagen.leegWinkelwagen();
                     mijnKortingCodes.remove(consument.getGebruikteKortingCode());
                     consument.setGebruikteKortingCode(null);
                     System.out.println("De winkelwagen is leeg en de kortingcode is niet meer beschikbaar.");
