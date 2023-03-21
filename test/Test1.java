@@ -1,18 +1,22 @@
 import org.junit.Test;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class Test1 {
 @Test
-    public void testVoegProductToe() {
+public void testVerwijderProduct() {
     //Arrange
     Winkelwagen winkelwagen = new Winkelwagen();
+    Product product1 = new Product("Pindakaas", 3.50);
+    Product product2 = new VersProduct("Melk", 2.50, 4);
 
     //Act
-    Product product = new Product("Wijn", 5.00, 4);
-    winkelwagen.voegProductToe(product);
+    winkelwagen.voegProductToe(product1);
+    winkelwagen.voegProductToe(product2);
+    winkelwagen.verwijderProduct(product2);
 
     //Assert
-    assertTrue(winkelwagen.getProducten().contains(product));
+    assertFalse(winkelwagen.getProducten().contains(product2));
+
 
 }
 }

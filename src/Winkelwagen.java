@@ -12,31 +12,23 @@ public class Winkelwagen {
     }
 
     public void voegProductToe(Product product) {
-            producten.add(product);
-
+        producten.add(product);
     }
 
     public void verwijderProduct(Product product) {
         producten.remove(product);
     }
 
+    public void leegWinkelwagen() {
+        producten.clear();
+    }
+
     public double getTotaal() {
         double totaal = 0;
         for (Product product : producten) {
-            totaal += product.getTotaal();
+            totaal += product.getPrijs();
         }
         return totaal;
     }
-
-    public void printWinkelwagen() {
-        if (producten.size() == 0) {
-            System.out.println("Uw winkelwagen is leeg!");
-        }
-        else {
-            System.out.println("Uw winkelwagen bevat: ");
-                System.out.println(producten.toString());
-
-        }
-        System.out.println("Uw totaal prijs: " + getTotaal());
-    }
 }
+

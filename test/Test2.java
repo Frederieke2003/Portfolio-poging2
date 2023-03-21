@@ -3,17 +3,22 @@ import static org.junit.Assert.assertEquals;
 
 public class Test2 {
     @Test
-    public void testGetTotaalprijs() {
+    public void testRekenAf() {
         //Arrange
+        Consument consument = new Consument(01);
         Winkelwagen winkelwagen = new Winkelwagen();
+        Product product1 = new Product("Cola", 8);
+        Product product2 = new VersProduct("Vifit", 8, 8);
+        KortingsCode kortingsCode = new KortingsCode("KORTINGSCODETEST", 10);
 
         //Act
-        Product product1 = new Agf("Apple", 2.50, 2, "Fruit");
-        Product product2 = new Product("Chocolade", 3.00, 3);
         winkelwagen.voegProductToe(product1);
         winkelwagen.voegProductToe(product2);
+        consument.setWinkelwagen(winkelwagen);
+        consument.kortingToepassen(kortingsCode);
 
         //Assert
-        assertEquals(14.0, winkelwagen.getTotaal(), 0.01);
+        assertEquals(6, consument.rekenAf(), 0.01);
+
     }
 }
