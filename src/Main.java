@@ -146,7 +146,7 @@ public class Main {
                     System.out.println("Producten in de winkelwagen:");
                     Map<String, Integer> productsWithCount2 = new HashMap<>();
                     // Dit creëert een nieuwe HashMap met
-                    // sleutels van het type String en waarden van het type Integer en wijst deze toe aan de variabele productsWithCount2.
+                    // sleutels van het type String en waarden van het type int en wijst deze toe aan de variabele productsWithCount2.
                     double totaalPrijs2 = 0;
                     for (Product product : consument.winkelwagen.getProducten()) {
                         String productName = product.getNaam();
