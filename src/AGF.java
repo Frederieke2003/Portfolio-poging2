@@ -7,6 +7,11 @@ public class AGF extends Product {
     }
 
     @Override
+    public double getPrijs() {
+        return super.getPrijs();
+    }
+
+    @Override
     public String toString() {
         return super.toString() + " - " + soort;
     }
