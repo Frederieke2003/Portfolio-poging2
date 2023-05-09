@@ -12,7 +12,10 @@ public class VersProduct extends Product {
             return super.getPrijs() * 0.5;
         } else if (houdbaarheid <= 5) {
             return super.getPrijs() * 0.8;
-        } else {
+        } else if (houdbaarheid <= 8) {
+            return super.getPrijs() *0.9;
+        }
+        else {
             return super.getPrijs();
         }
     }

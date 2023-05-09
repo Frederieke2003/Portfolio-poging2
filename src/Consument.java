@@ -3,18 +3,26 @@ import java.util.List;
 
 public class Consument {
     private int consumentId;
+    private int leeftijd;
     public Winkelwagen winkelwagen;
     private List<KortingsCode> kortingsCodes;
     private KortingsCode gebruikteKortingCode;
 
-    public Consument(int consumentId) {
+    public Consument(int consumentId, int leeftijd) {
         this.consumentId = consumentId;
+        this.leeftijd = leeftijd;
         this.winkelwagen = new Winkelwagen();
         this.kortingsCodes = new ArrayList<>();
     }
 
     public void kortingToepassen(KortingsCode kortingsCode) {
-        this.gebruikteKortingCode = kortingsCode;
+        if (leeftijd > 12 && winkelwagen.getTotaal() > 10.00) {
+            this.gebruikteKortingCode = kortingsCode;
+            System.out.println(kortingsCode + " is toegepast.");
+            setGebruikteKortingCode(kortingsCode);
+        }
+        else{ System.out.println("Sorry, u moet meer dan €10 bestellen om een kortingscode toe te passen.");
+        gebruikteKortingCode = null;}
     }
 
     public double rekenAf() {
@@ -22,7 +30,7 @@ public class Consument {
         if (gebruikteKortingCode != null) {
             totaalPrijs -= gebruikteKortingCode.getKortingWaarde();
         }
-        winkelwagen.leegWinkelwagen();
+        //winkelwagen.leegWinkelwagen();
         return totaalPrijs;
     }
 
@@ -37,6 +45,9 @@ public class Consument {
     public void setConsumentId(int consumentId) {
         this.consumentId = consumentId;
     }
+
+    public int getLeeftijd() {return leeftijd;}
+    public void setLeeftijd(int leeftijd) {this.leeftijd=leeftijd;}
 
     public Winkelwagen getWinkelwagen() {
         return winkelwagen;

@@ -5,7 +5,7 @@ public class Test2 {
     @Test
     public void testRekenAf() {
         //Arrange
-        Consument consument = new Consument(01);
+        Consument consument = new Consument(01, 13);
         Winkelwagen winkelwagen = new Winkelwagen();
         Product product1 = new Product("Cola", 8);
         Product product2 = new VersProduct("Vifit", 8, 8);

@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Consument consument = new Consument(1);
+        Consument consument = new Consument(1, 13);
 
         List<Product> beschikbareProducten = new ArrayList<>();
         beschikbareProducten.add(new Product("Brood", 2.50));
@@ -102,36 +102,36 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("Mijn kortingcodes: ");
-                    for (KortingsCode code : mijnKortingCodes) {
-                        System.out.println("- " + code);
-                    }
+                        System.out.println("Mijn kortingcodes: ");
+                        for (KortingsCode code : mijnKortingCodes) {
+                            System.out.println("- " + code);
+                        }
 
-                    System.out.println("Voer de kortingcode in: (code)");
-                    String kortingCodeString = scanner.nextLine();
-                    KortingsCode kortingCode = null;
-                    for (KortingsCode code : mijnKortingCodes) {
-                        if (code.getCode().equalsIgnoreCase(kortingCodeString)) {
-                            kortingCode = code;
+                        System.out.println("Voer de kortingcode in: (code)");
+                        String kortingCodeString = scanner.nextLine();
+                        KortingsCode kortingCode = null;
+                        for (KortingsCode code : mijnKortingCodes) {
+                            if (code.getCode().equalsIgnoreCase(kortingCodeString)) {
+                                kortingCode = code;
+                                break;
+                            }
+                        }
+
+                        if (kortingCode == null) {
+                            System.out.println("Kortingcode niet gevonden.");
                             break;
                         }
-                    }
 
-                    if (kortingCode == null) {
-                        System.out.println("Kortingcode niet gevonden.");
-                        break;
-                    }
-
-                    if (consument.getGebruikteKortingCode()!= null) {
-                        System.out.println("Er is al een kortingcode toegepast. Wil je deze vervangen? (ja/nee)");
-                        String antwoord = scanner.nextLine();
-                        if (!antwoord.equalsIgnoreCase("ja")) {
-                            break;
+                        if (consument.getGebruikteKortingCode() != null) {
+                            System.out.println("Er is al een kortingcode toegepast. Wil je deze vervangen? (ja/nee)");
+                            String antwoord = scanner.nextLine();
+                            if (!antwoord.equalsIgnoreCase("ja")) {
+                                break;
+                            }
                         }
-                    }
 
-                    consument.kortingToepassen(kortingCode);
-                    System.out.println(kortingCode + " is toegepast.");
+                        consument.kortingToepassen(kortingCode);
+
                     break;
 
                 case 5:
