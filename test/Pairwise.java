@@ -9,15 +9,17 @@ public class Pairwise {
         //arrange
         KortingsCode kortingsCode = new KortingsCode("Korting05", 5);
 
-        Consument consument1 = new Consument(1, 10);
+        //Leeftijd onder de 13 is geen klant
+        //Leeftijd boven de 13 is wel een klant
+        Consument consument1 = new Consument(1, 16);
         Product product1 = new VersProduct("Melk", 10.00, 1);
         Consument consument2 = new Consument(2, 10);
         Product product2 = new VersProduct("Boter", 11, 1);
-        Consument consument3 = new Consument(3, 13);
+        Consument consument3 = new Consument(3, 16);
         Product product3 = new VersProduct("Vifit", 11,4);
-        Consument consument4 = new Consument(4, 13);
+        Consument consument4 = new Consument(4, 10);
         Product product4 = new VersProduct("Chocomelk", 10, 4);
-        Consument consument5 = new Consument(5, 12);
+        Consument consument5 = new Consument(5, 14);
         Product product5 = new VersProduct("Kruidenboter", 10, 7);
         Consument consument6 = new Consument(5, 12);
         Product product6 = new VersProduct("Roomboter", 11,7);
