@@ -2,14 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Consument {
-    private int consumentId;
     private int leeftijd;
     public WinkelwagenTemplate winkelwagen;
     private List<KortingsCode> kortingsCodes;
     private StandaardKortingsCode gebruikteKortingCode;
 
-    public Consument(int consumentId, int leeftijd) {
-        this.consumentId = consumentId;
+    public Consument(int leeftijd) {
         this.leeftijd = leeftijd;
         this.winkelwagen = new Winkelwagen();
         this.kortingsCodes = new ArrayList<>();
@@ -37,10 +35,6 @@ public class Consument {
 
     public void setWinkelwagen(WinkelwagenTemplate winkelwagen) {
         this.winkelwagen = winkelwagen;
-    }
-
-    public List<KortingsCode> getKortingsCodes() {
-        return kortingsCodes;
     }
 
 

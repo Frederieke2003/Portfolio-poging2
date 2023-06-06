@@ -20,7 +20,7 @@ public class Main {
 
 
         Scanner scanner = new Scanner(System.in);
-        Consument consument = new Consument(1, 13);
+        Consument consument = new Consument(13);
 
         List<Product> beschikbareProducten = new ArrayList<>();
         beschikbareProducten.add(new StandaardProduct("Brood", 2.50));
@@ -30,14 +30,12 @@ public class Main {
         beschikbareProducten.add(new VersProduct("Eieren", 15, 2));
         beschikbareProducten.add(new AGF("Appel", 1.00, "Fruit"));
         beschikbareProducten.add(new AGF("Bloemkool", 2.50, "Groente"));
-        Action productToevoegenActie = new ProductToevoegenActie();
 
         List<StandaardKortingsCode> mijnKortingCodes = new ArrayList<>();
         mijnKortingCodes.add(new StandaardKortingsCode("KORTING05", 5));
         mijnKortingCodes.add(new StandaardKortingsCode("BLACKFRIDAY", 10));
         mijnKortingCodes.add(new StandaardKortingsCode("KORTING10", 10));
         mijnKortingCodes.add(new StandaardKortingsCode("KORTING20", 20));
-        Action kortingscodeToepassenActie = new KortingscodeToepassenActie();
 
             System.out.println("Welkom! Wat wil je doen?");
             System.out.println("1. Product toevoegen aan winkelwagen");
