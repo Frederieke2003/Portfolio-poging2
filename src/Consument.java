@@ -4,9 +4,9 @@ import java.util.List;
 public class Consument {
     private int consumentId;
     private int leeftijd;
-    public Winkelwagen winkelwagen;
+    public WinkelwagenTemplate winkelwagen;
     private List<KortingsCode> kortingsCodes;
-    private KortingsCode gebruikteKortingCode;
+    private StandaardKortingsCode gebruikteKortingCode;
 
     public Consument(int consumentId, int leeftijd) {
         this.consumentId = consumentId;
@@ -15,7 +15,7 @@ public class Consument {
         this.kortingsCodes = new ArrayList<>();
     }
 
-    public void kortingToepassen(KortingsCode kortingsCode) {
+    public void kortingToepassen(StandaardKortingsCode kortingsCode) {
         if (leeftijd > 12 && winkelwagen.getTotaal() > 10.00) {
             this.gebruikteKortingCode = kortingsCode;
             System.out.println(kortingsCode + " is toegepast.");
@@ -34,26 +34,8 @@ public class Consument {
         return totaalPrijs;
     }
 
-    public void voegKortingCodeToe(KortingsCode kortingsCode) {
-        kortingsCodes.add(kortingsCode);
-    }
 
-    public int getConsumentId() {
-        return consumentId;
-    }
-
-    public void setConsumentId(int consumentId) {
-        this.consumentId = consumentId;
-    }
-
-    public int getLeeftijd() {return leeftijd;}
-    public void setLeeftijd(int leeftijd) {this.leeftijd=leeftijd;}
-
-    public Winkelwagen getWinkelwagen() {
-        return winkelwagen;
-    }
-
-    public void setWinkelwagen(Winkelwagen winkelwagen) {
+    public void setWinkelwagen(WinkelwagenTemplate winkelwagen) {
         this.winkelwagen = winkelwagen;
     }
 
@@ -61,15 +43,12 @@ public class Consument {
         return kortingsCodes;
     }
 
-    public void setKortingsCodes(List<KortingsCode> kortingsCodes) {
-        this.kortingsCodes = kortingsCodes;
-    }
 
     public KortingsCode getGebruikteKortingCode() {
         return gebruikteKortingCode;
     }
 
-    public void setGebruikteKortingCode(KortingsCode gebruikteKortingCode) {
+    public void setGebruikteKortingCode(StandaardKortingsCode gebruikteKortingCode) {
         this.gebruikteKortingCode = gebruikteKortingCode;
     }
 }

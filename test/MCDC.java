@@ -5,21 +5,21 @@ public class MCDC {
     @Test
     public void test() {
         //arrange
-        Product product1 = new Product("Tomatensaus", 15.00);
+        Product product1 = new StandaardProduct("Tomatensaus", 15.00);
         Consument consument1 = new Consument(1, 14);
-        KortingsCode kortingsCode1 = new KortingsCode("Korting05", 5);
+        StandaardKortingsCode kortingsCode1 = new StandaardKortingsCode("Korting05", 5);
 
-        Product product2 = new Product("Knoflook", 5);
+        Product product2 = new StandaardProduct("Knoflook", 5);
         Consument consument2 = new Consument(2, 15);
-        KortingsCode kortingsCode2 = new KortingsCode("Korting06", 6);
+        StandaardKortingsCode kortingsCode2 = new StandaardKortingsCode("Korting06", 6);
 
-        Product product3 = new Product("Jam", 90.00);
+        Product product3 = new StandaardProduct("Jam", 90.00);
         Consument consument3 = new Consument(3, 16);
-        KortingsCode kortingsCode3 = new KortingsCode("Korting07", 7);
+        StandaardKortingsCode kortingsCode3 = new StandaardKortingsCode("Korting07", 7);
 
-        Product product4 = new Product("Bananenwraps", 10.02);
+        Product product4 = new StandaardProduct("Bananenwraps", 10.02);
         Consument consument4 = new Consument(4, 10);
-        KortingsCode kortingsCode4 = new KortingsCode("Korting08", 8);
+        StandaardKortingsCode kortingsCode4 = new StandaardKortingsCode("Korting08", 8);
 
         //act
         consument1.winkelwagen.voegProductToe(product1);

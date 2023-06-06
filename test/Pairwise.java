@@ -7,7 +7,7 @@ public class Pairwise {
     @Test
     public void test() {
         //arrange
-        KortingsCode kortingsCode = new KortingsCode("Korting05", 5);
+        StandaardKortingsCode kortingsCode = new StandaardKortingsCode("Korting05", 5);
 
         //Leeftijd onder de 13 is geen klant
         //Leeftijd boven de 13 is wel een klant

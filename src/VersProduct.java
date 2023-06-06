@@ -21,7 +21,7 @@ public class VersProduct extends Product {
     }
 
     @Override
-    public String toString() {
+    public String info() {
         return super.toString() + " (Houdbaarheid: " + houdbaarheid + " dagen)";
     }
 }

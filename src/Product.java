@@ -1,4 +1,4 @@
-public class Product {
+abstract class Product {
     private String naam;
     private double prijs;
 
@@ -15,8 +15,6 @@ public class Product {
         return prijs;
     }
 
-    @Override
-    public String toString() {
-        return naam + " (€" + prijs + ")";
-    }
+    abstract String info();
+
 }

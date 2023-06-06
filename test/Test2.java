@@ -7,9 +7,9 @@ public class Test2 {
         //Arrange
         Consument consument = new Consument(01, 13);
         Winkelwagen winkelwagen = new Winkelwagen();
-        Product product1 = new Product("Cola", 8);
+        Product product1 = new StandaardProduct("Cola", 8);
         Product product2 = new VersProduct("Vifit", 8, 8);
-        KortingsCode kortingsCode = new KortingsCode("KORTINGSCODETEST", 10);
+        StandaardKortingsCode kortingsCode = new StandaardKortingsCode("KORTINGSCODETEST", 10);
 
         //Act
         winkelwagen.voegProductToe(product1);
